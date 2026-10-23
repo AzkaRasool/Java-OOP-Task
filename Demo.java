@@ -1,38 +1,34 @@
 public class Demo{
 
-	public static void main(String args[]){
+public static void main(String args[]){
 
- 	Student s1=new Student();
-	Student s2=new Student();
-	s1.id=89;
- 	s1.name="Azka";
- 	s1.completedCredits=7;
+LibrarySection ls=new LibrarySection("Computing Section");
 
-	s1.printSummary();
+Book b1=new Book("x","AB-01","League","121212","A-34");
+Book b2=new Book("y","AB-02","Heros","13131313","B-52");
 
-        s2.id=63;
- 	s2.name="Hiba";
- 	s2.completedCredits=3;
+b1.displayInfo();
 
-	s2.printSummary();
-        
-	s1.addCredits(8);
-        s1.printSummary();
+Magazine m1=new Magazine(876,"BC-09","Dailycuts","454545","C-53");
 
-        Student a=new Student();
-	a.name="ali";
-	Student b=a;
-	b.name="sara";
-	Student c=new Student();
-	c.name=a.name;
+b2.displayInfo();
+m1.displayInfo();
 
-      a.printSummary();
-      b.printSummary();
-      c.printSummary();
+ls.addItem(b1);
+ls.addItem(b2);
+ls.addItem(m1);
 
-	
+System.out.println(ls.getName());
+//ls.displayItems();
 
-	s1.rename("laiba");
-        s1.printSummary();
+Book b3=new Book("XYZ","AB-03","Tragic","141414","C-67");
+Book b4=new Book("Unknown","AB-04","Magic","15151515","D-75");
+
+ls.addItem(b3);
+ls.displayItems();
+
+//ls.addItem(b4);
+
 }
+
 }
