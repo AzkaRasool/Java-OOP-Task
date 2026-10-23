@@ -1,34 +1,36 @@
 public class Demo{
 
-public static void main(String args[]){
+public static void main(String []args){
 
-LibrarySection ls=new LibrarySection("Computing Section");
+DeliveryDesk ds=new DeliveryDesk("Front Desk-1");
+//System.out.println(ds.getName());
 
-Book b1=new Book("x","AB-01","League","121212","A-34");
-Book b2=new Book("y","AB-02","Heros","13131313","B-52");
+DeliveryRider d1=new DeliveryRider("ABC-554","Hamza","LHF-7176");
+d1.displayInfo();
 
-b1.displayInfo();
+Customer c1=new Customer("TD-77","Hina","DHA-PHASE 2");
+c1.displayInfo();
 
-Magazine m1=new Magazine(876,"BC-09","Dailycuts","454545","C-53");
+FoodOrder f1=new FoodOrder("XY-11",c1,"B-001",2060);
+f1.displayOrder();
 
-b2.displayInfo();
-m1.displayInfo();
+ds.addOrder(f1);
+ds.addRider(d1);
 
-ls.addItem(b1);
-ls.addItem(b2);
-ls.addItem(m1);
+System.out.println(ds.getName());
+ds.displayDesk();
 
-System.out.println(ls.getName());
-//ls.displayItems();
+DeliveryRider d2=new DeliveryRider("GHF-384","Ashraf","BBR-8906");
+FoodOrder f2=new FoodOrder("FT-12",c1,"B-002",5050);
+FoodOrder f3=new FoodOrder("FS-13",c1,"B-003",3200);
 
-Book b3=new Book("XYZ","AB-03","Tragic","141414","C-67");
-Book b4=new Book("Unknown","AB-04","Magic","15151515","D-75");
+ds.addOrder(f2);
+ds.addOrder(f3);
+ds.addRider(d2);
 
-ls.addItem(b3);
-ls.displayItems();
+System.out.println(ds.getName());
+ds.displayDesk();
 
-//ls.addItem(b4);
-
-}
+} 
 
 }
